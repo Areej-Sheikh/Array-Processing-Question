@@ -74,22 +74,101 @@ public class ProcessingArray {
 
 
         // Find total number of elements in the array
+        int totalElements = 0;
+        for (int i = 0; i < givenArray.length; i++) {
+            totalElements++;
+        }
+        System.out.println("Total number of elements in the given array are = " + totalElements);
+        System.out.println();
+
 
         // Count total number on odd elements
+        int oddElements = 0;
+        for (int i = 0; i < givenArray.length; i++) {
+            if (givenArray[i] % 2 != 0) {
+                oddElements++;
+            }
+        }
+        System.out.println("The total number of odd elements are = " + oddElements);
+        System.out.println();
+
 
         // print the index of first 50 even numbers
+        int count = 0;
+        System.out.println("Index of first 50 even numbers : ");
+        for (int i = 0; i < givenArray.length; i++) {
+            if (givenArray[i] % 2 == 0) {
+                System.out.print(i + " ");
+                count++;
+            }
+            if (count == 50) {
+                break;
+            }
+        }
+        System.out.println();
+
 
         // find the index of last even number
+        int lastEvenIndex = -1;
+        for (int i = 0; i < givenArray.length; i++) {
+            if (givenArray[i] % 2 == 0) {
+                lastEvenIndex = i;
+            }
 
+        }
+        if (lastEvenIndex != -1) {
+            System.out.println();
+            System.out.println("Last even number is at index " + lastEvenIndex);
+        }
         // find the index of second last odd number
 
         // Find how many 3 digits elements are there in the given array
+        int threeDigitNumber = 0;
+        for (int i = 0; i < givenArray.length; i++) {
+            if (givenArray[i] >= 100 && givenArray[i] <= 999) {
+                threeDigitNumber++;
+            }
+        }
+        System.out.println();
+        System.out.println("Number of three digit number are = " + threeDigitNumber);
 
         // find the smallest element from the array
+        int smallestElement = givenArray[0];
+        for (int i = 0; i < givenArray.length; i++) {
+            if (givenArray[i] < smallestElement) {
+                smallestElement = givenArray[i];
+            }
+        }
+        System.out.println();
+        System.out.println("Smallest Element in the given array = " + smallestElement);
 
         // find the largest element from the array
+        int largestElement = givenArray[0];
+        for (int i = 0; i < givenArray.length; i++) {
+            if (givenArray[i] > largestElement) {
+                largestElement = givenArray[i];
+            }
+        }
+        System.out.println();
+        System.out.println("Largest Element in the given array = " + largestElement);
+
 
         // Print the 5th odd element every time, but count all the even elements and print
-
+        int evenCount = 0;
+        int oddCount = 0;
+        System.out.println();
+        System.out.println("Count of 5th odd element = ");
+        for (int i = 0; i < givenArray.length; i++) {
+            if (givenArray[i] % 2 == 0) {
+                evenCount++;
+            } else {
+                oddCount++;
+                if (oddCount % 5 == 0) {
+                    System.out.print(givenArray[i] + " ");
+                }
+            }
+        }
+        System.out.println();
+        System.out.println("Count of Even Elements = " + evenCount);
     }
 }
